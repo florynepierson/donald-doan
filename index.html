@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Donald Doan – Enseignant · Conférencier · Écrivain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --gold: #c9a96e;
+  --deep: #0e0c0a;
+  --ink: #1a1714;
+  --warm: #f5f0e8;
+  --muted: #7a7060;
+  --border: rgba(201,169,110,.22);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--deep);
+  color: var(--warm);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 3rem;
+  height: 64px;
+  background: rgba(14,12,10,.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo img { height: 34px; display: block; }
+.nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+.nav-links a {
+  color: var(--warm); text-decoration: none;
+  font-size: .7rem; letter-spacing: .2em; text-transform: uppercase;
+  opacity: .7; transition: opacity .2s, color .2s;
+}
+.nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
+.has-dropdown { position: relative; }
+.dropdown {
+  display: none; position: absolute; top: calc(100% + 14px); left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink); border: 1px solid var(--border);
+  min-width: 210px; padding: .5rem 0;
+  box-shadow: 0 16px 40px rgba(0,0,0,.5);
+}
+.has-dropdown:hover .dropdown { display: block; }
+.dropdown a {
+  display: block; padding: .55rem 1.4rem;
+  font-size: .68rem; white-space: nowrap;
+  color: var(--warm); text-decoration: none; opacity: .7;
+}
+.dropdown a:hover { background: rgba(201,169,110,.08); opacity: 1; color: var(--gold); }
+.nav-fb {
+  color: var(--gold); text-decoration: none;
+  font-size: .68rem; letter-spacing: .18em; opacity: .7; transition: opacity .2s;
+}
+.nav-fb:hover { opacity: 1; }
+
+/* ─── HERO ────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center;
+  padding: 8rem 2rem 5rem;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 55% at 50% 45%, rgba(201,169,110,.08) 0%, transparent 68%);
+  pointer-events: none;
+}
+.hero-tag {
+  font-size: .63rem; letter-spacing: .45em; text-transform: uppercase;
+  color: var(--gold); opacity: .7; margin-bottom: 2rem;
+  animation: fadeUp .9s ease both;
+}
+.hero-logo {
+  height: 105px; margin-bottom: 1.8rem;
+  animation: fadeUp .9s .1s ease both;
+}
+.hero-sub {
+  font-size: .8rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--muted); max-width: 46ch;
+  line-height: 2.1; margin-bottom: 3rem;
+  animation: fadeUp .9s .22s ease both;
+}
+.hero-cta {
+  display: flex; gap: 1.4rem; flex-wrap: wrap; justify-content: center;
+  animation: fadeUp .9s .38s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── BUTTONS ─────────────────────────────────────── */
+.btn-primary {
+  display: inline-block; padding: .8rem 2.1rem;
+  border: 1px solid var(--gold); color: var(--gold);
+  text-decoration: none; font-size: .7rem; letter-spacing: .25em; text-transform: uppercase;
+  transition: background .25s, color .25s;
+}
+.btn-primary:hover { background: var(--gold); color: var(--deep); }
+.btn-ghost {
+  display: inline-block; padding: .8rem 2.1rem;
+  border: 1px solid rgba(245,240,232,.2); color: var(--warm);
+  text-decoration: none; font-size: .7rem; letter-spacing: .25em; text-transform: uppercase;
+  transition: border-color .25s, color .25s;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ─── SECTION COMMONS ─────────────────────────────── */
+.section-label {
+  display: block; font-size: .6rem; letter-spacing: .42em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.9rem,4.5vw,3rem);
+  font-weight: 300; line-height: 1.18; margin-bottom: 1.4rem;
+}
+.divider { width: 46px; height: 1px; background: var(--gold); margin-bottom: 2.4rem; }
+
+/* ─── BIO SECTION ─────────────────────────────────── */
+.bio-section {
+  background: var(--ink);
+  padding: 7rem 2rem;
+}
+.bio-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Left: text + portrait side by side */
+.bio-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.bio-portrait-inline {
+  float: right;
+  width: 220px;
+  margin: 0 0 1.6rem 2.2rem;
+  shape-outside: inset(0);
+}
+.bio-portrait-inline img {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--border);
+}
+
+.bio-lead {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-style: italic;
+  color: var(--warm); line-height: 1.65; margin-bottom: 1.3rem;
+}
+.bio-body {
+  color: rgba(245,240,232,.72); line-height: 1.9; margin-bottom: 1.3rem;
+  font-size: .93rem;
+}
+.bio-note {
+  margin-top: .8rem;
+  font-size: .7rem; letter-spacing: .15em;
+  color: var(--gold); border-top: 1px solid var(--border); padding-top: .9rem;
+}
+
+/* Right: sidebar */
+.bio-sidebar {
+  display: flex; flex-direction: column; gap: 0;
+  position: sticky; top: 80px;
+}
+.sidebar-img-link {
+  display: block; line-height: 0;
+  border: 1px solid var(--border);
+  transition: border-color .25s;
+  margin-bottom: 1px;
+}
+.sidebar-img-link:first-child { margin-top: 0; }
+.sidebar-img-link:hover { border-color: var(--gold); }
+.sidebar-img-link img {
+  width: 100%; display: block;
+}
+.sidebar-portrait img {
+  width: 100%; display: block;
+  border: 1px solid var(--border);
+  margin-bottom: 1px;
+}
+.sidebar-contact {
+  background: var(--deep);
+  border: 1px solid var(--border);
+  padding: 1.6rem 1.5rem;
+  margin-top: 1px;
+}
+.contact-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; color: var(--gold); margin-bottom: 1rem;
+}
+.contact-item {
+  display: flex; flex-direction: column;
+  margin-bottom: .85rem; font-size: .82rem;
+  color: rgba(245,240,232,.58);
+}
+.contact-item strong {
+  color: var(--warm); font-weight: 400;
+  font-size: .6rem; letter-spacing: .22em; text-transform: uppercase;
+  margin-bottom: .18rem;
+}
+.contact-item a { color: var(--gold); text-decoration: none; }
+.contact-item a:hover { text-decoration: underline; }
+
+/* ─── MEDIA SECTION ───────────────────────────────── */
+.media-section {
+  background: var(--deep);
+  padding: 7rem 2rem;
+}
+.media-inner { max-width: 1100px; margin: 0 auto; }
+.media-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic; color: var(--muted);
+  margin-bottom: 2.8rem; font-size: 1rem;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.video-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; color: var(--warm); margin-bottom: .25rem;
+}
+.video-date {
+  font-size: .64rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: .7rem;
+}
+.video-wrapper {
+  position: relative; padding-bottom: 56.25%; height: 0;
+  overflow: hidden; border: 1px solid var(--border);
+}
+.video-wrapper iframe {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%; border: none;
+}
+
+/* ─── FOOTER ──────────────────────────────────────── */
+footer {
+  background: #080604;
+  padding: 3.5rem 2rem 2rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.footer-logo { height: 34px; margin: 0 auto 1rem; display: block; }
+.footer-tagline {
+  font-size: .62rem; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 1.8rem;
+}
+.footer-links {
+  display: flex; justify-content: center; gap: 2rem;
+  flex-wrap: wrap; list-style: none; margin-bottom: 2rem;
+}
+.footer-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
+  transition: color .2s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: .62rem; color: rgba(122,112,96,.4); letter-spacing: .1em; }
+
+/* ─── RESPONSIVE ──────────────────────────────────── */
+@media (max-width: 960px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  .bio-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .bio-sidebar { position: static; }
+  .bio-portrait-inline { width: 160px; margin: 0 0 1.2rem 1.5rem; }
+  .video-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+}
+@media (max-width: 600px) {
+  .bio-portrait-inline { float: none; width: 100%; margin: 0 0 1.5rem; }
+  .video-grid { grid-template-columns: 1fr; }
+  .hero-logo { height: 80px; }
+  .bio-section, .media-section { padding: 5rem 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ NAV ═══════════════════════ -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="http://donalddoan.com/wp-content/uploads/2015/03/logoDonaldSmall-White.png" alt="Donald Doan"/>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Accueil</a></li>
+    <li><a href="http://donalddoan.com/ateliers-et-conference/">Activités</a></li>
+    <li><a href="http://donalddoan.com/voyages/">Voyages</a></li>
+    <li><a href="http://donalddoan.com/consultations/">Consultations</a></li>
+    <li class="has-dropdown">
+      <a href="http://donalddoan.com/boutique-de-donald-doan/">Boutique</a>
+      <div class="dropdown">
+        <a href="http://doanvitae.biz/" target="_blank">Mes essences de vie</a>
+        <a href="http://donalddoan.com/livres/">Mes livres</a>
+        <a href="http://donalddoan.com/store/">Ma musique</a>
+        <a href="http://donalddoan.com/mes-dvd/">Mes DVD</a>
+      </div>
+    </li>
+  </ul>
+
+  <a href="https://www.facebook.com/donalddoan" target="_blank" class="nav-fb">↗ Facebook</a>
+</nav>
+
+
+<!-- ═══════════════════ HERO ══════════════════════ -->
+<section class="hero">
+  <p class="hero-tag">Québec · Canada · Monde</p>
+  <img
+    src="http://donalddoan.com/wp-content/uploads/2015/03/logoDonaldSmall.png"
+    alt="Donald Doan"
+    class="hero-logo"
+  />
+  <p class="hero-sub">
+    Écrivain · Conférencier · Enseignant international<br/>
+    en épanouissement personnel &amp; spiritualité
+  </p>
+  <div class="hero-cta">
+    <a href="http://donalddoan.com/consultations/" class="btn-primary">Prendre rendez-vous</a>
+    <a href="http://donalddoan.com/ateliers-et-conference/" class="btn-ghost">Voir les activités</a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ BIO ═══════════════════════ -->
+<section class="bio-section">
+  <div class="bio-inner">
+
+    <!-- LEFT: bio text with floating portrait -->
+    <div class="bio-text-wrap">
+      <span class="section-label">En quelques mots, je suis…</span>
+      <h2 class="section-title">
+        Enseignant du <em style="font-style:italic;color:var(--gold)">Sô</em><br/>
+        et de la Médecine Arcturienne
+      </h2>
+      <div class="divider"></div>
+
+      <!-- Portrait flottant à droite dans le texte -->
+      <div class="bio-portrait-inline">
+        <img src="donaldStanding.png" alt="Donald Doan"/>
+      </div>
+
+      <p class="bio-lead">
+        Originaire du Québec (Canada), je diffuse et enseigne depuis 2008 les «Sô» et la
+        «Médecine Arcturienne» d'un continent à l'autre.
+      </p>
+
+      <p class="bio-body">
+        Depuis des années, je partage avec tous ceux qui le veulent ma passion et mes connaissances
+        dans le but de vous aider à découvrir votre potentiel et à le manifester dans l'amour et le
+        respect de tous. En tout premier, c'est d'abord le contact avec soi et sa petite voix
+        intérieure qui ouvre la voie à son épanouissement et à la création de sa propre vie telle
+        que la souhaite, c'est-à-dire, rempli d'amour, d'espoir, de joie et de santé.
+      </p>
+
+      <p class="bio-body">
+        Une nuit, je m'en souviens encore comme si c'était hier, j'ai vu un Maître accompagné des
+        Dauphins et d'un grand félin — j'étais couché sur le sol près de la mer et là j'ai vécu la
+        plus grande initiation de toute… celle qui me consacrait Enfant de Dieu, au service de la
+        Lumière et du Grand Tout… je devenais ainsi «initié» vers le retour à la Source… un baptême
+        en quelque sorte. Ce fut le baptême du feu.
+      </p>
+
+      <p class="bio-body">
+        Sur ma route, j'ai croisé plusieurs «grands personnages» sages qui m'ont aidé à grandir.
+        Tout est en soi. Tout est là. Tout est parfait et tout est simple. Rien ne sert de courir —
+        prenez le temps de savourer le temps. Il n'y a pas de course, aucune compétition, et tout
+        est à la portée de tous.
+      </p>
+
+      <p class="bio-note">Nouvelle adresse courriel : noramadoan@gmail.com</p>
+
+      <div style="margin-top:2rem;">
+        <a href="http://donalddoan.com/ateliers-et-conference/" class="btn-ghost">
+          Découvrir mes activités
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: sidebar -->
+    <aside class="bio-sidebar">
+
+      <!-- Photo portrait -->
+      <div class="sidebar-portrait">
+        <img
+          src="http://donalddoan.com/wp-content/uploads/2015/03/logoDonaldSmall.png"
+          alt="Donald Doan portrait"
+          style="background:var(--ink); padding:1.5rem;"
+        />
+      </div>
+
+      <!-- Essences promo -->
+      <a href="http://doanvitae.biz/" target="_blank" class="sidebar-img-link">
+        <img
+          src="http://donalddoan.com/wp-content/uploads/2015/03/pubColonneGauche.jpg"
+          alt="Mes essences de vie – doanvitae.biz"
+        />
+      </a>
+
+      <!-- Livres promo -->
+      <a href="http://donalddoan.com/livres/" class="sidebar-img-link">
+        <img
+          src="http://donalddoan.com/wp-content/uploads/2015/03/pubColonneGaucheLivres-B.jpg"
+          alt="Mes livres"
+        />
+      </a>
+
+      <!-- Contact -->
+      <div class="sidebar-contact">
+        <p class="contact-title">Contactez-moi</p>
+        <div class="contact-item">
+          <strong>Téléphone</strong>
+          <span>1-514-993-2900</span>
+        </div>
+        <div class="contact-item">
+          <strong>Courriel</strong>
+          <a href="mailto:noramadoan@gmail.com">noramadoan@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <strong>Facebook</strong>
+          <a href="https://www.facebook.com/donalddoan" target="_blank">facebook.com/donalddoan</a>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ MÉDIAS ════════════════════ -->
+<section class="media-section">
+  <div class="media-inner">
+    <span class="section-label">Émissions radio web</span>
+    <h2 class="section-title">Médias</h2>
+    <div class="divider"></div>
+    <p class="media-subtitle">
+      «En Provenance des Étoiles» avec Julie Leblanc · radioanonyme.com
+    </p>
+
+    <div class="video-grid">
+
+      <div class="video-card">
+        <h4>La Glande Pinéale</h4>
+        <p class="video-date">19 mai 2015</p>
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/Hrl_AoL62Zw"
+            allowfullscreen loading="lazy"
+            title="La Glande Pinéale"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <h4>Le Pardon Quantique</h4>
+        <p class="video-date">12 mai 2015</p>
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/OesZCAkU6d4"
+            allowfullscreen loading="lazy"
+            title="Le Pardon Quantique"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <h4>Qui Je SUIS</h4>
+        <p class="video-date">9 mai 2015</p>
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/_QmLfzOakXU"
+            allowfullscreen loading="lazy"
+            title="Qui Je SUIS"
+          ></iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ FOOTER ════════════════════ -->
+<footer>
+  <img
+    src="http://donalddoan.com/wp-content/uploads/2015/03/logoDonaldSmall.png"
+    alt="Donald Doan"
+    class="footer-logo"
+  />
+  <p class="footer-tagline">Enseignant · Conférencier · Écrivain</p>
+  <ul class="footer-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="http://donalddoan.com/ateliers-et-conference/">Activités</a></li>
+    <li><a href="http://donalddoan.com/voyages/">Voyages</a></li>
+    <li><a href="http://donalddoan.com/consultations/">Consultations</a></li>
+    <li><a href="http://donalddoan.com/boutique-de-donald-doan/">Boutique</a></li>
+    <li><a href="https://www.facebook.com/donalddoan" target="_blank">Facebook</a></li>
+  </ul>
+  <p class="footer-copy">© Donald Doan — Tous droits réservés</p>
+</footer>
+
+</body>
+</html>

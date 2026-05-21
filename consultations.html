@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Consultations – Donald Doan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--gold:#c9a96e;--deep:#0e0c0a;--ink:#1a1714;--warm:#f5f0e8;--muted:#7a7060;--border:rgba(201,169,110,.22)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--deep);color:var(--warm);font-weight:300;font-size:16px;line-height:1.7;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 3rem;height:64px;background:rgba(14,12,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo img{height:34px;display:block}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{color:var(--warm);text-decoration:none;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;opacity:.7;transition:opacity .2s,color .2s}
+.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--gold)}
+.has-dropdown{position:relative}
+.dropdown{display:none;position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);background:var(--ink);border:1px solid var(--border);min-width:210px;padding:.5rem 0;box-shadow:0 16px 40px rgba(0,0,0,.5)}
+.has-dropdown:hover .dropdown{display:block}
+.dropdown a{display:block;padding:.55rem 1.4rem;font-size:.68rem;white-space:nowrap;color:var(--warm);text-decoration:none;opacity:.7}
+.dropdown a:hover{background:rgba(201,169,110,.08);opacity:1;color:var(--gold)}
+.nav-fb{color:var(--gold);text-decoration:none;font-size:.68rem;letter-spacing:.18em;opacity:.7;transition:opacity .2s}
+.nav-fb:hover{opacity:1}
+.page-hero{padding:9rem 2rem 4rem;background:var(--ink);border-bottom:1px solid var(--border)}
+.page-hero .inner{max-width:1100px;margin:0 auto}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:300;color:var(--warm);line-height:1.1}
+.page-hero .sub{font-size:.65rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:block}
+.page-content{padding:6rem 2rem;max-width:1100px;margin:0 auto}
+.two-col{display:grid;grid-template-columns:1fr 300px;gap:4.5rem;align-items:start}
+.sidebar{display:flex;flex-direction:column;gap:1px;position:sticky;top:80px}
+.sidebar-img-link{display:block;line-height:0;border:1px solid var(--border);transition:border-color .25s}
+.sidebar-img-link:hover{border-color:var(--gold)}
+.sidebar-img-link img{width:100%;display:block}
+.sidebar-contact{background:var(--ink);border:1px solid var(--border);padding:1.6rem 1.5rem;margin-top:1px}
+.contact-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold);margin-bottom:1rem}
+.contact-item{display:flex;flex-direction:column;margin-bottom:.85rem;font-size:.82rem;color:rgba(245,240,232,.58)}
+.contact-item strong{color:var(--warm);font-weight:400;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:.18rem}
+.contact-item a{color:var(--gold);text-decoration:none}
+.body-text{color:rgba(245,240,232,.72);line-height:1.9;margin-bottom:1.2rem;font-size:.93rem}
+.lead-text{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-style:italic;color:var(--warm);line-height:1.65;margin-bottom:1.3rem}
+.btn-primary{display:inline-block;padding:.8rem 2.1rem;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;transition:background .25s,color .25s}
+.btn-primary:hover{background:var(--gold);color:var(--deep)}
+.price-box{background:var(--ink);border:1px solid var(--border);padding:2rem 2.2rem;margin:2.5rem 0;display:flex;align-items:center;gap:2rem}
+.price-amount{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--gold);line-height:1;white-space:nowrap}
+.price-details{font-size:.82rem;color:rgba(245,240,232,.6);line-height:1.7}
+.price-details strong{color:var(--warm);font-weight:400}
+footer{background:#080604;padding:3.5rem 2rem 2rem;border-top:1px solid var(--border);text-align:center}
+.footer-logo{height:34px;margin:0 auto 1rem;display:block}
+.footer-tagline{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:1.8rem}
+.footer-links{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;list-style:none;margin-bottom:2rem}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:.62rem;color:rgba(122,112,96,.4);letter-spacing:.1em}
+@media(max-width:960px){nav{padding:0 1.5rem}.nav-links{display:none}.two-col{grid-template-columns:1fr;gap:2.5rem}.sidebar{position:static}}
+@media(max-width:600px){.page-hero{padding:8rem 1.5rem 3rem}.page-content{padding:4rem 1.5rem}.price-box{flex-direction:column;gap:1rem}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="http://donalddoan.com/wp-content/uploads/2015/03/logoDonaldSmall-White.png" alt="Donald Doan"/></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="activites.html">Activités</a></li>
+    <li><a href="voyages.html">Voyages</a></li>
+    <li><a href="consultations.html" class="active">Consultations</a></li>
+    <li class="has-dropdown">
+      <a href="boutique.html">Boutique</a>
+      <div class="dropdown">
+        <a href="http://doanvitae.biz/" target="_blank">Mes essences de vie</a>
+        <a href="livres.html">Mes livres</a>
+        <a href="musique.html">Ma musique</a>
+        <a href="dvd.html">Mes DVD</a>
+      </div>
+    </li>
+  </ul>
+  <a href="https://www.facebook.com/donalddoan" target="_blank" class="nav-fb">↗ Facebook</a>
+</nav>
+
+<div class="page-hero">
+  <div class="inner">
+    <span class="sub">Séances personnalisées</span>
+    <h1>Consultations</h1>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="two-col">
+    <main>
+      <img src="http://donalddoan.com/wp-content/uploads/2015/03/P1010032.jpg" alt="Donald Doan" style="width:100%;display:block;border:1px solid var(--border);margin-bottom:2.5rem"/>
+
+      <p class="lead-text">Chaque rencontre est personnalisée et adaptée à vos besoins.</p>
+
+      <p class="body-text">Tout le travail énergétique s'effectue sur des plans vibratoires élevés et multidimensionnels. Selon la Volonté Divine, les conditions sont présentes pour des prises de conscience et une guérison des mémoires des différents corps afin d'apporter fluidité et ouverture dans les énergies et dans la vie.</p>
+
+      <p class="body-text">Les blessures, les blocages, les cristallisations, le manque de confiance, le refus d'incarnation… tout cela peut s'harmoniser par l'intervention des outils et Guides Arcturiens.</p>
+
+      <p class="body-text">Plus nous nettoyons et libérons notre être de tout ce qui l'encombre, plus nous sommes libres et en contact avec notre propre divinité, notre voix et notre mission de vie.</p>
+
+      <div class="price-box">
+        <div class="price-amount">90$<span style="font-size:1.4rem;color:var(--muted)"> CAD</span></div>
+        <div class="price-details">
+          <strong>Durée :</strong> environ 1 heure par séance<br/>
+          <strong>Tarif Europe :</strong> 90 €<br/>
+          <strong>Session téléphonique</strong> disponible sur demande
+        </div>
+      </div>
+
+      <a href="https://donalddoan.webnode.fr/consultation/" target="_blank" class="btn-primary">Réserver une consultation →</a>
+    </main>
+
+    <aside class="sidebar">
+      <a href="http://doanvitae.biz/" target="_blank" class="sidebar-img-link">
+        <img src="http://donalddoan.com/wp-content/uploads/2015/03/pubColonneGauche.jpg" alt="Mes essences de vie"/>
+      </a>
+      <a href="livres.html" class="sidebar-img-link">
+        <img src="http://donalddoan.com/wp-content/uploads/2015/03/pubColonneGaucheLivres-B.jpg" alt="Mes livres"/>
+      </a>
+      <div class="sidebar-contact">
+        <p class="contact-title">Contactez-moi</p>
+        <div class="contact-item"><strong>Téléphone</strong><span>1-514-993-2900</span></div>
+        <div class="contact-item"><strong>Courriel</strong><a href="mailto:noramadoan@gmail.com">noramadoan@gmail.com</a></div>
+        <div class="contact-item"><strong>Facebook</strong><a href="https://www.facebook.com/donalddoan" target="_blank">facebook.com/donalddoan</a></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <img src="http://donalddoan.com/wp-content/uploads/2015/03/logoDonaldSmall.png" alt="Donald Doan" class="footer-logo"/>
+  <p class="footer-tagline">Enseignant · Conférencier · Écrivain</p>
+  <ul class="footer-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="activites.html">Activités</a></li>
+    <li><a href="voyages.html">Voyages</a></li>
+    <li><a href="consultations.html">Consultations</a></li>
+    <li><a href="boutique.html">Boutique</a></li>
+    <li><a href="https://www.facebook.com/donalddoan" target="_blank">Facebook</a></li>
+  </ul>
+  <p class="footer-copy">© Donald Doan — Tous droits réservés</p>
+</footer>
+</body>
+</html>
