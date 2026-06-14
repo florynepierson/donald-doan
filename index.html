@@ -57,102 +57,135 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .btn-primary:hover{background:var(--gold);color:var(--deep)}
 .btn-ghost{display:inline-block;padding:.8rem 2.1rem;border:1px solid rgba(245,240,232,.2);color:var(--warm);text-decoration:none;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;transition:border-color .25s,color .25s}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-.year-heading{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold);margin:3rem 0 1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border)}
-.city-heading{font-size:.63rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);margin:2rem 0 1rem}
-.event-card{border-left:2px solid var(--border);padding:1rem 1.3rem;margin-bottom:1rem;transition:border-color .25s}
-.event-card:hover{border-color:var(--gold)}
-.event-card h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:var(--warm);margin-bottom:.2rem}
-.event-date{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.45rem}
-.event-card p{font-size:.86rem;color:rgba(245,240,232,.62);line-height:1.75}
-.event-contact{margin-top:.5rem;font-size:.72rem;color:var(--muted)}
-.event-contact a{color:var(--gold)}
-.coming-soon{background:rgba(201,169,110,.05);border:1px solid var(--border);padding:2rem;text-align:center;margin-bottom:3rem}
-.coming-soon p{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:var(--gold)}
-.book-item{display:grid;grid-template-columns:120px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--border);align-items:start}
-.book-item:last-child{border-bottom:none}
-.book-cover{width:100%;display:block;border:1px solid var(--border)}
-.book-info h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--warm);margin-bottom:.4rem}
-.book-meta{font-size:.72rem;letter-spacing:.12em;color:var(--muted);margin-bottom:.7rem}
-.book-isbn{font-size:.7rem;color:rgba(245,240,232,.35);margin-top:.6rem;letter-spacing:.08em}
-.tag-unavailable{display:inline-block;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#c0392b;border:1px solid rgba(192,57,43,.35);padding:.2rem .6rem;margin-top:.5rem}
-.btn-ghost-sm{display:inline-block;padding:.5rem 1.2rem;border:1px solid var(--border);color:var(--muted);text-decoration:none;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;transition:border-color .25s,color .25s;margin-top:.6rem}
-.btn-ghost-sm:hover{border-color:var(--gold);color:var(--gold)}
-.shop-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
-.shop-card{background:var(--ink);border:1px solid var(--border);padding:2.5rem 2.2rem;text-decoration:none;transition:border-color .25s,background .25s;display:flex;flex-direction:column;gap:.7rem}
-.shop-card:hover{border-color:var(--gold);background:rgba(201,169,110,.04)}
-.shop-card-icon{font-size:2rem;margin-bottom:.2rem}
-.shop-card-label{font-size:.6rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold)}
-.shop-card-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--warm);line-height:1.2}
-.shop-card-desc{font-size:.85rem;color:rgba(245,240,232,.55);line-height:1.75}
-.shop-card-cta{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:.3rem}
 .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
 .video-card h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--warm);margin-bottom:.25rem}
 .video-date{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
 .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border:1px solid var(--border)}
 .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+/* YouTube placeholder before consent */
+.video-placeholder{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border:1px solid var(--border);background:#0e0c0a;cursor:pointer}
+.video-placeholder-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;text-align:center;padding:1rem}
+.video-placeholder-inner p{font-size:.72rem;color:rgba(245,240,232,.45);line-height:1.7;max-width:22ch}
+.video-placeholder-btn{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border);padding:.4rem 1rem;transition:border-color .2s}
+.video-placeholder:hover .video-placeholder-btn{border-color:var(--gold)}
 footer{background:#080604;padding:3.5rem 2rem 2rem;border-top:1px solid var(--border);text-align:center}
 .footer-logo{height:34px;margin:0 auto 1rem;display:block}
 .footer-tagline{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:1.8rem}
 .footer-links{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;list-style:none;margin-bottom:2rem}
 .footer-links a{color:var(--muted);text-decoration:none;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;transition:color .2s}
 .footer-links a:hover{color:var(--gold)}
+.footer-legal-btn{background:none;border:none;cursor:pointer;color:var(--muted);font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;transition:color .2s;padding:0}
+.footer-legal-btn:hover{color:var(--gold)}
 .footer-copy{font-size:.62rem;color:rgba(122,112,96,.4);letter-spacing:.1em}
+
+/* ── Cookie Banner ── */
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:500;background:rgba(14,12,10,.97);border-top:1px solid var(--border);backdrop-filter:blur(12px);padding:1.4rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+#cookie-banner p{font-size:.78rem;color:rgba(245,240,232,.62);line-height:1.7;max-width:65ch}
+#cookie-banner p a{color:var(--gold);text-decoration:none}
+#cookie-banner p a:hover{text-decoration:underline}
+.cookie-actions{display:flex;gap:.8rem;flex-shrink:0;flex-wrap:wrap}
+.cookie-btn-accept{padding:.6rem 1.6rem;background:var(--gold);color:var(--deep);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;transition:opacity .2s}
+.cookie-btn-accept:hover{opacity:.85}
+.cookie-btn-decline{padding:.6rem 1.6rem;background:none;color:rgba(245,240,232,.5);border:1px solid var(--border);cursor:pointer;font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;transition:border-color .2s,color .2s}
+.cookie-btn-decline:hover{border-color:var(--gold);color:var(--warm)}
+#cookie-banner.hidden{display:none}
+
+/* ── Legal Modal ── */
+#legal-modal{display:none;position:fixed;inset:0;z-index:600;align-items:center;justify-content:center;padding:1.5rem}
+#legal-modal.open{display:flex}
+.legal-overlay{position:absolute;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(6px)}
+.legal-box{position:relative;z-index:1;background:var(--ink);border:1px solid var(--border);max-width:760px;width:100%;max-height:88vh;display:flex;flex-direction:column;box-shadow:0 32px 80px rgba(0,0,0,.7)}
+.legal-header{padding:2rem 2.2rem 1.4rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.legal-header h2{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:300;color:var(--warm)}
+.legal-close{background:none;border:none;cursor:pointer;color:var(--muted);font-size:1.4rem;line-height:1;padding:.2rem .4rem;transition:color .2s}
+.legal-close:hover{color:var(--gold)}
+.legal-body{padding:2rem 2.2rem 2.4rem;overflow-y:auto;flex:1}
+.legal-body h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:var(--gold);margin:1.8rem 0 .5rem}
+.legal-body h3:first-child{margin-top:0}
+.legal-body p{font-size:.84rem;color:rgba(245,240,232,.65);line-height:1.9;margin-bottom:.8rem}
+.legal-body a{color:var(--gold);text-decoration:none}
+.legal-body a:hover{text-decoration:underline}
+.legal-divider{width:32px;height:1px;background:var(--border);margin:2rem 0}
+
 @media(max-width:960px){
   nav{padding:0 1.5rem}
   .nav-links,.nav-fb{display:none}
   .nav-burger{display:flex}
-  .page-inner{grid-template-columns:1fr;gap:3rem}
-  .sidebar{position:static;flex-direction:row;flex-wrap:wrap;gap:1px}
-  .sidebar-img-link{flex:1 1 45%;min-width:130px}
-  .sidebar-contact{width:100%;flex:1 1 100%}
   .video-grid{grid-template-columns:1fr 1fr;gap:1.5rem}
-  .shop-grid{grid-template-columns:1fr}
+  #cookie-banner{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:600px){
-  .page-body{padding:4rem 1.4rem 5rem}
   .video-grid{grid-template-columns:1fr}
-  .book-item{grid-template-columns:90px 1fr;gap:1.2rem}
-  .shop-grid{grid-template-columns:1fr}
+  .legal-box{max-height:95vh}
+  .legal-body{padding:1.4rem 1.4rem 2rem}
+  .legal-header{padding:1.4rem 1.4rem 1rem}
 }
-
-.img-small {
-  width: 25%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-  
+.img-small{width:25%;height:auto;display:block;margin:0 auto}
 </style>
-<script>
-function toggleMenu(){
-  var m=document.getElementById('navMobile');
-  var open=m.classList.toggle('open');
-  document.getElementById('navBurger').setAttribute('aria-expanded',open);
-  document.body.style.overflow=open?'hidden':'';
-}
-</script>
 </head>
-<body><nav>
+<body>
+
+<!-- ══ COOKIE BANNER ══ -->
+<div id="cookie-banner">
+  <p>Ce site utilise des cookies YouTube (Google) pour afficher les vidéos intégrées. En acceptant, vous consentez au dépôt de ces cookies. Pour en savoir plus, consultez nos <button class="footer-legal-btn" onclick="openLegal()" style="display:inline;font-size:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:underline;color:var(--gold)">mentions légales</button>.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn-decline" onclick="declineCookies()">Refuser</button>
+    <button class="cookie-btn-accept" onclick="acceptCookies()">Accepter</button>
+  </div>
+</div>
+
+<!-- ══ LEGAL MODAL ══ -->
+<div id="legal-modal" role="dialog" aria-modal="true" aria-label="Mentions légales">
+  <div class="legal-overlay" onclick="closeLegal()"></div>
+  <div class="legal-box">
+    <div class="legal-header">
+      <h2>Mentions légales &amp; Confidentialité</h2>
+      <button class="legal-close" onclick="closeLegal()" aria-label="Fermer">&#x2715;</button>
+    </div>
+    <div class="legal-body">
+
+      <h3>1. Éditeur du site</h3>
+      <p>Ce site est édité par Donald Doan, enseignant, conférencier et écrivain, exerçant à titre personnel.<br/>
+      Ville : Montréal, Québec, Canada<br/>
+      Courriel : <a href="mailto:noramadoan@gmail.com">noramadoan@gmail.com</a><br/>
+      Téléphone : 1-514-993-2900</p>
+
+      <h3>2. Hébergement</h3>
+      <p>Ce site est hébergé par :<br/>
+      <strong style="color:var(--warm);font-weight:400">Vercel Inc.</strong><br/>
+      440 N Barranca Ave #4133, Covina, CA 91723, États-Unis<br/>
+      <a href="https://vercel.com" target="_blank">vercel.com</a></p>
+
+      <div class="legal-divider"></div>
+
+      <h3>3. Données personnelles</h3>
+      <p>Ce site ne collecte aucune donnée personnelle via un formulaire. Le seul moyen de contact proposé est un lien d'envoi direct par courriel (<a href="mailto:noramadoan@gmail.com">noramadoan@gmail.com</a>). Les messages reçus sont utilisés uniquement pour répondre à vos demandes et ne sont jamais transmis à des tiers.</p>
+
+      <p>Conformément au <strong style="color:var(--warm);font-weight:400">Règlement général sur la protection des données (RGPD)</strong> et à la <strong style="color:var(--warm);font-weight:400">Loi 25 du Québec</strong>, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits, écrivez à : <a href="mailto:noramadoan@gmail.com">noramadoan@gmail.com</a></p>
+
+      <h3>4. Cookies</h3>
+      <p>Ce site n'utilise aucun cookie propriétaire. Il intègre des vidéos YouTube (Google LLC) qui peuvent déposer des cookies tiers sur votre appareil à des fins de statistiques et de personnalisation, uniquement si vous avez donné votre consentement via le bandeau présent en bas de page.</p>
+      <p>En cas de refus, les vidéos restent accessibles directement sur <a href="https://youtube.com" target="_blank">youtube.com</a>. Vous pouvez modifier votre choix à tout moment en rechargent la page et en interagissant à nouveau avec le bandeau.</p>
+      <p>Pour plus d'informations sur les cookies Google : <a href="https://policies.google.com/technologies/cookies?hl=fr" target="_blank">policies.google.com</a></p>
+
+      <h3>5. Propriété intellectuelle</h3>
+      <p>L'ensemble du contenu de ce site (textes, images, logos, vidéos) est la propriété exclusive de Donald Doan ou de ses ayants droit. Toute reproduction, même partielle, est interdite sans autorisation préalable écrite.</p>
+
+      <h3>6. Liens externes</h3>
+      <p>Ce site contient des liens vers des sites tiers (Facebook, YouTube). Donald Doan ne peut être tenu responsable du contenu de ces sites ni de leurs pratiques en matière de protection des données.</p>
+
+      <div class="legal-divider"></div>
+      <p style="font-size:.74rem;color:rgba(245,240,232,.3)">Dernière mise à jour : juin 2025</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav>
   <a href="index.html" class="nav-logo"><img src="images/logo-blanc.png" alt="Donald Doan"/></a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Accueil</a></li>
-    <!--
-    <li><a href="activites.html">Activités</a></li>
-    -->
-    <!--
-    <li><a href="voyages.html">Voyages</a></li>
-    -->
     <li><a href="consultations.html">Consultations</a></li>
-    <li class="has-dropdown">
-      <!--
-      <a href="boutique.html">Boutique</a>
-      <div class="dropdown"><a href="essences.html">Mes essences de vie</a>
-        <a href="livres.html">Mes livres</a>
-        <a href="musique.html">Ma musique</a>
-        <a href="dvd.html">Mes DVD</a>
-        </div>
-      -->
-    </li>
   </ul>
   <a href="https://www.facebook.com/donalddoan" target="_blank" class="nav-fb">↗ Facebook</a>
   <button class="nav-burger" id="navBurger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
@@ -161,17 +194,10 @@ function toggleMenu(){
 </nav>
 <div class="nav-mobile" id="navMobile" role="dialog" aria-label="Menu principal">
   <a href="index.html" class="active">Accueil</a>
-    <!--<a href="activites.html">Activités</a>-->
-    <!--<a href="voyages.html">Voyages</a>-->
-    <a href="consultations.html">Consultations</a>
-    <!--<span class="mob-divider"></span><span class="mob-sub">Boutique</span>
-    <a href="essences.html" style="font-size:1.1rem">Mes essences de vie</a>
-    <a href="livres.html" style="font-size:1.1rem">Mes livres</a>
-    <a href="musique.html" style="font-size:1.1rem">Ma musique</a>
-    <a href="dvd.html" style="font-size:1.1rem">Mes DVD</a>-->
-    
+  <a href="consultations.html">Consultations</a>
 </div>
 
+<!-- ══ HERO ══ -->
 <section style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 2rem 5rem;position:relative;overflow:hidden">
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 50% 45%,rgba(201,169,110,.08) 0%,transparent 68%);pointer-events:none"></div>
   <img src="images/logo-arcturien2.jpeg" alt="Logo Arcturien" class="img-small"/>
@@ -187,6 +213,7 @@ function toggleMenu(){
   </div>
 </section>
 
+<!-- ══ BIO ══ -->
 <section style="background:var(--ink);padding:7rem 2rem">
   <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 320px;gap:5rem;align-items:start" class="bio-grid">
     <div>
@@ -221,42 +248,119 @@ function toggleMenu(){
   @media(max-width:600px){.bio-float{float:none;width:100%;margin:0 0 1.5rem 0}}
 </style>
 
+<!-- ══ MÉDIAS ══ -->
 <section style="background:var(--deep);padding:7rem 2rem">
   <div style="max-width:1100px;margin:0 auto">
     <span class="section-label">Émissions radio web</span>
     <h2 class="section-title">Médias</h2>
     <div class="divider"></div>
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);margin-bottom:2.8rem;font-size:1rem">«En Provenance des Étoiles» avec Julie Leblanc · radioanonyme.com</p>
-    <div class="video-grid">
-      <div class="video-card">
-        <h4>La Glande Pinéale</h4>
-        <p class="video-date">19 mai 2015</p>
-        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/Hrl_AoL62Zw" allowfullscreen loading="lazy" title="La Glande Pinéale"></iframe></div>
-      </div>
-      <div class="video-card">
-        <h4>Le Pardon Quantique</h4>
-        <p class="video-date">12 mai 2015</p>
-        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/OesZCAkU6d4" allowfullscreen loading="lazy" title="Le Pardon Quantique"></iframe></div>
-      </div>
-      <div class="video-card">
-        <h4>Qui Je SUIS</h4>
-        <p class="video-date">9 mai 2015</p>
-        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/_QmLfzOakXU" allowfullscreen loading="lazy" title="Qui Je SUIS"></iframe></div>
-      </div>
+    <div class="video-grid" id="video-grid">
+      <!-- Populated by JS based on cookie consent -->
     </div>
   </div>
 </section>
+
+<!-- ══ FOOTER ══ -->
 <footer>
   <img src="images/logo-orange.png" alt="Donald Doan" class="footer-logo"/>
   <p class="footer-tagline">Enseignant · Conférencier · Écrivain</p>
   <ul class="footer-links">
     <li><a href="index.html">Accueil</a></li>
-    <!--<li><a href="activites.html">Activités</a></li>-->
-    <!--<li><a href="voyages.html">Voyages</a></li>-->
     <li><a href="consultations.html">Consultations</a></li>
-    <!--<li><a href="boutique.html">Boutique</a></li>-->
     <li><a href="https://www.facebook.com/donalddoan" target="_blank">Facebook</a></li>
+    <li><button class="footer-legal-btn" onclick="openLegal()">Mentions légales</button></li>
   </ul>
   <p class="footer-copy">&copy; Donald Doan &mdash; Tous droits réservés</p>
 </footer>
-</body></html>
+
+<script>
+// ── Videos data ──
+const videos = [
+  {title:'La Glande Pinéale', date:'19 mai 2015', id:'Hrl_AoL62Zw'},
+  {title:'Le Pardon Quantique', date:'12 mai 2015', id:'OesZCAkU6d4'},
+  {title:'Qui Je SUIS', date:'9 mai 2015', id:'_QmLfzOakXU'}
+];
+
+// ── Cookie logic ──
+const COOKIE_KEY = 'dd_cookies_consent';
+
+function getConsent(){return localStorage.getItem(COOKIE_KEY)}
+
+function acceptCookies(){
+  localStorage.setItem(COOKIE_KEY,'accepted');
+  document.getElementById('cookie-banner').classList.add('hidden');
+  renderVideos(true);
+}
+
+function declineCookies(){
+  localStorage.setItem(COOKIE_KEY,'declined');
+  document.getElementById('cookie-banner').classList.add('hidden');
+  renderVideos(false);
+}
+
+function renderVideos(accepted){
+  const grid = document.getElementById('video-grid');
+  grid.innerHTML = '';
+  videos.forEach(v => {
+    const card = document.createElement('div');
+    card.className = 'video-card';
+    if(accepted){
+      card.innerHTML = `
+        <h4>${v.title}</h4>
+        <p class="video-date">${v.date}</p>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/${v.id}" allowfullscreen loading="lazy" title="${v.title}"></iframe>
+        </div>`;
+    } else {
+      card.innerHTML = `
+        <h4>${v.title}</h4>
+        <p class="video-date">${v.date}</p>
+        <div class="video-placeholder" onclick="acceptCookies()" title="Cliquer pour accepter les cookies et afficher la vidéo">
+          <div class="video-placeholder-inner">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(201,169,110,.4)" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="rgba(201,169,110,.4)" stroke="none"/></svg>
+            <p>Vidéo YouTube — cookies requis</p>
+            <span class="video-placeholder-btn">Accepter &amp; regarder</span>
+          </div>
+        </div>`;
+    }
+    grid.appendChild(card);
+  });
+}
+
+// ── Init on load ──
+(function init(){
+  const consent = getConsent();
+  if(consent){
+    document.getElementById('cookie-banner').classList.add('hidden');
+    renderVideos(consent === 'accepted');
+  } else {
+    renderVideos(false);
+  }
+})();
+
+// ── Nav burger ──
+function toggleMenu(){
+  var m=document.getElementById('navMobile');
+  var open=m.classList.toggle('open');
+  document.getElementById('navBurger').setAttribute('aria-expanded',open);
+  document.body.style.overflow=open?'hidden':'';
+}
+
+// ── Legal modal ──
+function openLegal(){
+  const modal = document.getElementById('legal-modal');
+  modal.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLegal(){
+  const modal = document.getElementById('legal-modal');
+  modal.classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape') closeLegal();
+});
+</script>
+</body>
+</html>
